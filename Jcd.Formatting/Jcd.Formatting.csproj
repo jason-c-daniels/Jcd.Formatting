@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>Jcd.Formatting</Title>
+        <Authors>Jason C Daniels</Authors>
+        <Description>A library to simplify implementing IFormatProvider and ICustomFormatter as well as arbitrary integer encoding (e.g. Base 31 is you please)</Description>
+        <Copyright>2018-2021</Copyright>
+        <PackageProjectUrl>https://github.com/jason-c-daniels/Jcd.Formatting</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/jason-c-daniels/Jcd.Formatting/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/jason-c-daniels/Jcd.Formatting</RepositoryUrl>
+        <RepositoryType>GitHub</RepositoryType>
+        <PackageTags>csharp c# formatting integer encoding</PackageTags>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Jcd.Reflection" Version="1.0.1" />
+      <PackageReference Include="Jcd.Validations" Version="1.0.1" />
+    </ItemGroup>
+
+</Project>
