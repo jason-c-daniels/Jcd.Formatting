@@ -1,0 +1,16 @@
+### [Jcd.Formatting](Jcd_Formatting.md 'Jcd.Formatting').[IntegerEncoder](Jcd_Formatting_IntegerEncoder.md 'Jcd.Formatting.IntegerEncoder')
+## IntegerEncoder.IntegerEncoder(string, bool) Constructor
+Constructs an encoder when given an alphabet with exact encoding to decoding matching.  
+```csharp
+public IntegerEncoder(string characterSet, bool caseSensitive=false);
+```
+#### Parameters
+<a name='Jcd_Formatting_IntegerEncoder_IntegerEncoder(string_bool)_characterSet'></a>
+`characterSet` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
+The character set to use for encoding and decoding. (where length = n, char at index 0=0,  
+char at n-1=n-1)  
+  
+<a name='Jcd_Formatting_IntegerEncoder_IntegerEncoder(string_bool)_caseSensitive'></a>
+`caseSensitive` [System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  
+indicates if the characters are case sensitive for encoding/decoding.
+  

@@ -1,0 +1,742 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jcd.Formatting</name>
+    </assembly>
+    <members>
+        <member name="T:Jcd.Formatting.CustomFormatterBase">
+            <inheritdoc cref="T:System.IFormatProvider" />
+            <inheritdoc cref="T:System.ICustomFormatter" />
+            <summary>
+               A base class to simplify custom formatter implementation by requiring the implementer to only
+               provide an array of handled types, and a formatting function.
+            </summary>
+        </member>
+        <member name="T:Jcd.Formatting.CustomFormatterBase.CustomFormattingFunction">
+            <summary>
+               This is the signature which custom formatting functions must abide by.
+            </summary>
+            <param name="customFormatter">The custom formatter object.</param>
+            <param name="formatString">the format string.</param>
+            <param name="argToFormat">The item to format.</param>
+            <param name="formatProvider">The format provider.</param>
+            <returns></returns>
+        </member>
+        <member name="F:Jcd.Formatting.CustomFormatterBase.TypeComparer">
+            <summary>
+               Default type comparison
+            </summary>
+        </member>
+        <member name="M:Jcd.Formatting.CustomFormatterBase.#ctor(System.Collections.Generic.IEnumerable{System.Type},System.Func{System.ICustomFormatter,System.String,System.Object,System.IFormatProvider,System.String})">
+            <summary>
+               Constructs a custom formatter, and enforces some common rules.
+            </summary>
+            <param name="handledTypes">The data types the derived type will handle.</param>
+            <param name="formatFunction">
+               The formatting function, provided by the derived type, abiding by the
+               CustomFormattingFunction signature
+            </param>
+        </member>
+        <member name="T:Jcd.Formatting.CustomFormatterBase.MyTypeComparer">
+            <inheritdoc />
+            <summary>
+               Compares types by name.
+            </summary>
+        </member>
+        <member name="M:Jcd.Formatting.CustomFormatterBase.MyTypeComparer.Compare(System.Type,System.Type)">
+            <summary>
+               Performs a comparison between two types.
+            </summary>
+            <param name="x">the elft side of the comparison</param>
+            <param name="y">the right ride of the comparison</param>
+            <returns>-1 if x is less than y, 1 if x is greater than y, 0 if equal.</returns>
+        </member>
+        <member name="M:Jcd.Formatting.CustomFormatterBase.Format(System.String,System.Object,System.IFormatProvider)">
+            <inheritdoc />
+            <summary>
+            </summary>
+            <param name="fmt"></param>
+            <param name="arg"></param>
+            <param name="formatProvider"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jcd.Formatting.CustomFormatterBase.GetFormat(System.Type)">
+            <inheritdoc />
+            <summary>
+               Gets the format object. (this)
+            </summary>
+            <param name="formatType">The data type for the format type</param>
+            <returns>this if custom formatting requested.</returns>
+        </member>
+        <member name="T:Jcd.Formatting.IIntegerFormatter">
+            <summary>
+               An interface for formatting integers as text.
+            </summary>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.Byte)">
+            <summary>
+               Formats a byte as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.Int32)">
+            <summary>
+               Formats an int as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.Int64)">
+            <summary>
+               Formats a long as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.SByte)">
+            <summary>
+               Formats an sbyte as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.Int16)">
+            <summary>
+               Formats a short as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.UInt32)">
+            <summary>
+               Formats a uint as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.UInt64)">
+            <summary>
+               Formats a ulong as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.UInt16)">
+            <summary>
+               Formats a ushort as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerFormatter.Format(System.Numerics.BigInteger)">
+            <summary>
+               Formats a BigInteger as a string.
+            </summary>
+            <param name="value">the value to format</param>
+            <returns>the formatted value</returns>
+        </member>
+        <member name="T:Jcd.Formatting.IIntegerParser">
+            <summary>
+               An interface specification for parsing integers.
+            </summary>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseBigInteger(System.String)">
+            <summary>
+               Parses a string as a BigInteger
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+                If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.OutOfMemoryException">
+                If the provided characters cannot be decoded per the current encoding..
+            </exception>
+            <exception cref="T:System.ArgumentNullException">
+                If the text cannot be parse because the resultant value cause the application to exahaust
+                its memory.
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseByte(System.String)">
+            <summary>
+               Parses a string as a Byte
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentNullException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentException">
+               If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+               If the provided characters cannot be decoded per the current encoding..
+            </exception>
+            <exception cref="T:System.OverflowException">
+               If the text cannot be parse because the resultant value can't be stored in a Byte
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseInt16(System.String)">
+            <summary>
+               Parses a string as an Int16
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentNullException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentException">
+               If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.OverflowException">
+               If the text cannot be parse because the resultant value can't be stored in an Int16
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+               If the provided characters cannot be decoded per the current encoding..
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseInt32(System.String)">
+            <summary>
+               Parses a string as an Int32
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentNullException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentException">
+               If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.OverflowException">
+               If the text cannot be parse because the resultant value can't be stored in an Int32
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+               If the provided characters cannot be decoded per the current encoding..
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseInt64(System.String)">
+            <summary>
+               Parses a string as an Int64
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentNullException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentException">
+               If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.OverflowException">
+               If the text cannot be parse because the resultant value can't be stored in an Int64
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+               If the provided characters cannot be decoded per the current encoding..
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseSByte(System.String)">
+            <summary>
+               Parses a string as an SByte
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentNullException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentException">
+               If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.OverflowException">
+               If the text cannot be parse because the resultant value can't be stored in an SByte
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+               If the provided characters cannot be decoded per the current encoding..
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseUInt16(System.String)">
+            <summary>
+               Parses a string as an UInt16
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentNullException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentException">
+               If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.OverflowException">
+               If the text cannot be parse because the resultant value can't be stored in an UInt16
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+               If the provided characters cannot be decoded per the current encoding..
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseUInt32(System.String)">
+            <summary>
+               Parses a string as an UInt32
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentNullException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentException">
+               If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.OverflowException">
+               If the text cannot be parse because the resultant value can't be stored in an UInt32
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+               If the provided characters cannot be decoded per the current encoding..
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.ParseUInt64(System.String)">
+            <summary>
+               Parses a string as an UInt64
+            </summary>
+            <param name="value">The text to decode</param>
+            <returns>the decoded value</returns>
+            <exception cref="T:System.ArgumentNullException">If the value parameter was null</exception>
+            <exception cref="T:System.ArgumentException">
+               If the text is empty or whitespace.
+            </exception>
+            <exception cref="T:System.OverflowException">
+               If the text cannot be parse because the resultant value can't be stored in an UInt64
+            </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+               If the provided characters cannot be decoded per the current encoding..
+            </exception>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseBigInteger(System.String,System.Numerics.BigInteger@)">
+            <summary>
+               Tries to parse a BigInteger from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseByte(System.String,System.Byte@)">
+            <summary>
+               Tries to parse a Byte from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseInt16(System.String,System.Int16@)">
+            <summary>
+               Tries to parse a Int16 from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseInt32(System.String,System.Int32@)">
+            <summary>
+               Tries to parse a Int32 from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseInt64(System.String,System.Int64@)">
+            <summary>
+               Tries to parse a Int64 from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseSByte(System.String,System.SByte@)">
+            <summary>
+               Tries to parse a SByte from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseUInt16(System.String,System.UInt16@)">
+            <summary>
+               Tries to parse a UInt16 from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseUInt32(System.String,System.UInt32@)">
+            <summary>
+               Tries to parse a UInt32 from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="M:Jcd.Formatting.IIntegerParser.TryParseUInt64(System.String,System.UInt64@)">
+            <summary>
+               Tries to parse a UInt64 from the provided text.
+            </summary>
+            <param name="value">the text to parse</param>
+            <param name="result">the resultant value</param>
+            <returns>true if successfully parsed, false otherwise</returns>
+        </member>
+        <member name="T:Jcd.Formatting.IntegerEncoder">
+            <summary>
+               A class that performs integer encoding to text in an arbitrary base, as well as parsing
+               text encoded in the same manner.
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoder.Base">
+            <summary>
+               The numeric base of the encoder
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoder.CaseSensitive">
+            <summary>
+               Indicates if the characters that are decoded/encoded are case sensitive.
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoder.CharacterSet">
+            <summary>
+               The character set used for encoding and decoding (for simple decoders)
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoder.CharacterSetValuesAlwaysIncrease">
+            <summary>
+               A flag that indicates if the values of the characterset are numerically increasing. Using this can allow for faster
+               sorts of short numbers by NOT decoding first. (i.e. For positive numbers the text will sort the same as the number)
+            </summary>
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.#ctor(System.String,System.String[])">
+            <summary>
+               Constructs an encoder when given a character set to encode to, and an array of decode
+               mappings. (This is to support Crockford encoding/decoding)
+            </summary>
+            <param name="encodeCharacterSet">
+               The set of characters to use when encoding a number to text.
+            </param>
+            <param name="decodeCharacterSet">
+               The set of decode character mappings (i.e. which sets of characters map to which numeric
+               base value.)
+            </param>
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.#ctor(System.String,System.Boolean)">
+            <summary>
+               Constructs an encoder when given an alphabet with exact encoding to decoding matching.
+            </summary>
+            <param name="characterSet">
+               The character set to use for encoding and decoding. (where length = n, char at index 0=0,
+               char at n-1=n-1)
+            </param>
+            <param name="caseSensitive">indicates if the characters are case sensitive for encoding/decoding.</param>
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.UInt32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.UInt64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.UInt16)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.Byte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.Int32)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.Int64)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.Int16)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.SByte)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.Numerics.BigInteger)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseBigInteger(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseByte(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseInt16(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseInt32(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseInt64(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseSByte(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseUInt16(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseUInt32(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.ParseUInt64(System.String)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseBigInteger(System.String,System.Numerics.BigInteger@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseByte(System.String,System.Byte@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseInt16(System.String,System.Int16@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseInt32(System.String,System.Int32@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseInt64(System.String,System.Int64@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseSByte(System.String,System.SByte@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseUInt16(System.String,System.UInt16@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseUInt32(System.String,System.UInt32@)">
+            <inheritdoc />
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.TryParseUInt64(System.String,System.UInt64@)">
+            <inheritdoc />
+        </member>
+        <member name="T:Jcd.Formatting.IntegerEncoders">
+            <summary>
+                A class with a set of predefined integer encoders.
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Ascii85">
+            <summary>
+                ASCII 85 formatter, possibly under patent protection, need to check.
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base1280MonotonicIso885915">
+            <summary>
+                Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "0"
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base128AMonotonicIso885915">
+            <summary>
+                Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "A"
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base128MonotonicIso885915">
+            <summary>
+                Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet.
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base32Crockford">
+            <summary>
+                A base 32 formatter for Crockford numbers, special parsing rules.
+                TODO: Fully implement the "check code symbol" ala https://www.crockford.com/wrmg/base32.html
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base32Rfc4648">
+            <summary>
+                A base 32 formatter for RFC4648 numbers, case sensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base32Zrtp">
+            <summary>
+                A base 32 formatter for ZRTP encoded numbers, case sensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base32">
+            <summary>
+                A base 32 formatter using 0-9A-V, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base36">
+            <summary>
+                A base 36 formatter using 0-9A-Z, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base58Ipfs">
+            <summary>
+                A base 58 formatter IPFS compliant, case sensitive, alphabet:
+                123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base62">
+            <summary>
+                Base 62 formatter using: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base63">
+            <summary>
+                Base 63 formatter using: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base64">
+            <summary>
+                Base 64 formatter using the standard: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+/
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base64Bcrypt">
+            <summary>
+                Base 64 formatter: Bcrypt compliant
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base64BinHex4">
+            <summary>
+                Base 64 formatter: BinHex4 compliant
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base64Radix64">
+            <summary>
+                Base 64 formatter: Radix64 compliant
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base64UnixB64">
+            <summary>
+                Base 64 formatter: Unix B64 compliant
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base64Uuencoding">
+            <summary>
+                Base 64 formatter: Uuencoding compliant
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base64Xxencoding">
+            <summary>
+                Base 64 formatter: Xxencoding compliant
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base91">
+            <summary>
+                Base 91 formatter, basE91 compliant (see http://base91.sourceforge.net/)
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base930MonotonicIso885915">
+            <summary>
+                Base 93 formatting, first 93 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "0"
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base93StartAtLowercaseAMonotonicIso885915">
+            <summary>
+                Base 93 formatting, first 93 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "a"
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base93StartAtUppercaseAMonotonicIso885915">
+            <summary>
+                Base 93 formatting, first 93 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "A"
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base93MonotonicIso885915">
+            <summary>
+                Base 93 formatting, first 93 characters from the ISO8859_15_EncodingCharacters alphabet"
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Binary">
+            <summary>
+                A base 2 formatter using 01
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Decimal">
+            <summary>
+                A base 10 formatter using 0-9
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Duodecimal">
+            <summary>
+                A base 12 formatter using 0-9AB, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.FlickrBase58">
+            <summary>
+                A base 58 formatter Flickr short URL compliant, case sensitive, alphabet:
+                123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Heptadecimal">
+            <summary>
+                A base 17 formatter using 0-9A-G, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Hexadecimal">
+            <summary>
+                A base 16 formatter using 0-9A-F, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Nonary">
+            <summary>
+                A base 9 formatter using 0-8
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Octal">
+            <summary>
+                A base 8 formatter using 0-7
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Pentadecimal">
+            <summary>
+                A base 15 formatter using 0-9A-E, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Quaternary">
+            <summary>
+                A quaternary formatter using 0123
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Quinary">
+            <summary>
+                A quinary (base 5) formatter using 0-4
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Senary">
+            <summary>
+                A base 6 formatter using 0-5
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Septenary">
+            <summary>
+                A base 7 formatter using 0-6
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Sexagesimal">
+            <summary>
+                Base 60 formatter using this alphabet: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwx
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Ternary">
+            <summary>
+                A base 3 formatter 012
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Tetradecimal">
+            <summary>
+                A base 14 formatter using 0-9A-D, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Tridecimal">
+            <summary>
+                A base 13 formatter using 0-9A-C, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Undecimal">
+            <summary>
+                A base 11 formatter using 0-9A, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Vegesimal">
+            <summary>
+                A base 20 formatter using 0-9A-J, case insensitive
+            </summary>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Iso885915EncodingCharacters">
+            <summary>A base alphabet for various numeric encoders with whitespace and certain special characters removed.</summary>
+            <remarks>
+                Readable/non-whitespace subset of ISO8859. The following characters have been removed. This gives an alphabet of
+                166 characters in numerical order.
+                Characters: `¯°²³¹º·
+                0x2D (-) and numerically lower characters.
+                0x7F (DEL)
+                0xA0 (NBSP)
+                0xAD (SHY)
+            </remarks>
+        </member>
+        <member name="F:Jcd.Formatting.IntegerEncoders.Base32CrockfordDecodeCharacterSet">
+            <summary>
+                The decoding mappings for Crockford base 32 decoding.
+            </summary>
+        </member>
+    </members>
+</doc>
