@@ -16,12 +16,12 @@
         <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <PackageVersion>1.0.1</PackageVersion>
         <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
-        <PackageReleaseNotes>added support for .net standard 2.0</PackageReleaseNotes>
+        <PackageReleaseNotes>Upgraded Jcd.Validations to 1.0.8 and Jcd.Reflection to 1.0.12</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Jcd.Reflection" Version="1.0.2" />
-        <PackageReference Include="Jcd.Validations" Version="1.0.2" />
+        <PackageReference Include="Jcd.Reflection" Version="1.0.12" />
+        <PackageReference Include="Jcd.Validations" Version="1.0.8" />
     </ItemGroup>
 
 </Project>
