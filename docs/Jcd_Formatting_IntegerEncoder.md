@@ -16,13 +16,14 @@ Implements [IIntegerFormatter](Jcd_Formatting_IIntegerFormatter.md 'Jcd.Formatti
 | :--- | :--- |
 | [IntegerEncoder(string, bool)](Jcd_Formatting_IntegerEncoder_IntegerEncoder(string_bool).md 'Jcd.Formatting.IntegerEncoder.IntegerEncoder(string, bool)') | Constructs an encoder when given an alphabet with exact encoding to decoding matching.<br/> |
 | [IntegerEncoder(string, string[])](Jcd_Formatting_IntegerEncoder_IntegerEncoder(string_string__).md 'Jcd.Formatting.IntegerEncoder.IntegerEncoder(string, string[])') | Constructs an encoder when given a character set to encode to, and an array of decode<br/>mappings. (This is to support Crockford encoding/decoding)<br/> |
+| [IntegerEncoder(ushort, bool, string, bool, Dictionary&lt;char,int&gt;)](Jcd_Formatting_IntegerEncoder_IntegerEncoder(ushort_bool_string_bool_System_Collections_Generic_Dictionary_char_int_).md 'Jcd.Formatting.IntegerEncoder.IntegerEncoder(ushort, bool, string, bool, System.Collections.Generic.Dictionary&lt;char,int&gt;)') | Constructs an IntegerEncoder<br/> |
 
 | Fields | |
 | :--- | :--- |
 | [Base](Jcd_Formatting_IntegerEncoder_Base.md 'Jcd.Formatting.IntegerEncoder.Base') | The numeric base of the encoder<br/> |
 | [CaseSensitive](Jcd_Formatting_IntegerEncoder_CaseSensitive.md 'Jcd.Formatting.IntegerEncoder.CaseSensitive') | Indicates if the characters that are decoded/encoded are case sensitive.<br/> |
 | [CharacterSet](Jcd_Formatting_IntegerEncoder_CharacterSet.md 'Jcd.Formatting.IntegerEncoder.CharacterSet') | The character set used for encoding and decoding (for simple decoders)<br/> |
-| [CharacterSetValuesAlwaysIncrease](Jcd_Formatting_IntegerEncoder_CharacterSetValuesAlwaysIncrease.md 'Jcd.Formatting.IntegerEncoder.CharacterSetValuesAlwaysIncrease') | A flag that indicates if the values of the characterset are numerically increasing. Using this can allow for faster<br/>sorts of short numbers by NOT decoding first. (i.e. For positive numbers the text will sort the same as the number)<br/> |
+| [CharacterSetValuesAlwaysIncrease](Jcd_Formatting_IntegerEncoder_CharacterSetValuesAlwaysIncrease.md 'Jcd.Formatting.IntegerEncoder.CharacterSetValuesAlwaysIncrease') | A flag that indicates if the values of the character set are numerically increasing. Using this can allow for faster<br/>sorts of short numbers by NOT decoding first. (i.e. For positive numbers the text will sort the same as the number)<br/> |
 
 | Methods | |
 | :--- | :--- |

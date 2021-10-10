@@ -47,7 +47,7 @@
             <summary>
                Performs a comparison between two types.
             </summary>
-            <param name="x">the elft side of the comparison</param>
+            <param name="x">the left side of the comparison</param>
             <param name="y">the right ride of the comparison</param>
             <returns>-1 if x is less than y, 1 if x is greater than y, 0 if equal.</returns>
         </member>
@@ -155,7 +155,7 @@
                 If the provided characters cannot be decoded per the current encoding..
             </exception>
             <exception cref="T:System.ArgumentNullException">
-                If the text cannot be parse because the resultant value cause the application to exahaust
+                If the text cannot be parse because the resultant value cause the application to exhaust
                 its memory.
             </exception>
         </member>
@@ -390,7 +390,7 @@
         </member>
         <member name="F:Jcd.Formatting.IntegerEncoder.CharacterSetValuesAlwaysIncrease">
             <summary>
-               A flag that indicates if the values of the characterset are numerically increasing. Using this can allow for faster
+               A flag that indicates if the values of the character set are numerically increasing. Using this can allow for faster
                sorts of short numbers by NOT decoding first. (i.e. For positive numbers the text will sort the same as the number)
             </summary>
         </member>
@@ -416,6 +416,17 @@
                char at n-1=n-1)
             </param>
             <param name="caseSensitive">indicates if the characters are case sensitive for encoding/decoding.</param>
+        </member>
+        <member name="M:Jcd.Formatting.IntegerEncoder.#ctor(System.UInt16,System.Boolean,System.String,System.Boolean,System.Collections.Generic.Dictionary{System.Char,System.Int32})">
+            <summary>
+            Constructs an IntegerEncoder
+            </summary>
+            <param name="base"></param>
+            <param name="caseSensitive"></param>
+            <param name="characterSet"></param>
+            <param name="characterSetValuesAlwaysIncrease"></param>
+            <param name="charToValue"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
         </member>
         <member name="M:Jcd.Formatting.IntegerEncoder.Format(System.UInt32)">
             <inheritdoc />

@@ -7,7 +7,7 @@ public int Compare(System.Type x, System.Type y);
 #### Parameters
 <a name='Jcd_Formatting_CustomFormatterBase_MyTypeComparer_Compare(System_Type_System_Type)_x'></a>
 `x` [System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')  
-the elft side of the comparison
+the left side of the comparison
   
 <a name='Jcd_Formatting_CustomFormatterBase_MyTypeComparer_Compare(System_Type_System_Type)_y'></a>
 `y` [System.Type](https://docs.microsoft.com/en-us/dotnet/api/System.Type 'System.Type')  

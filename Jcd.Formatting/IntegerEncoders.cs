@@ -1,4 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+// ReSharper disable StringLiteralTypo
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable CommentTypo
+// ReSharper disable UnusedType.Global
 
 namespace Jcd.Formatting
 {
@@ -58,6 +62,7 @@ namespace Jcd.Formatting
       ///     A base 32 formatter for Crockford numbers, special parsing rules.
       ///     TODO: Fully implement the "check code symbol" ala https://www.crockford.com/wrmg/base32.html
       /// </summary>
+      // ReSharper disable once NotAccessedField.Global
       public static readonly IntegerEncoder Base32Crockford;
 
       /// <summary>

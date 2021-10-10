@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Numerics;
 using Jcd.Reflection;
 using Jcd.Validations;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedMember.Global
 
 namespace Jcd.Formatting
 {
@@ -30,7 +32,7 @@ namespace Jcd.Formatting
       public readonly string CharacterSet;
 
       /// <summary>
-      ///    A flag that indicates if the values of the characterset are numerically increasing. Using this can allow for faster
+      ///    A flag that indicates if the values of the character set are numerically increasing. Using this can allow for faster
       ///    sorts of short numbers by NOT decoding first. (i.e. For positive numbers the text will sort the same as the number)
       /// </summary>
       public readonly bool CharacterSetValuesAlwaysIncrease;
@@ -137,21 +139,34 @@ namespace Jcd.Formatting
          {
             _charToValue.Add(c, i);
 
-            if (CharacterSetValuesAlwaysIncrease && (pc > c)) CharacterSetValuesAlwaysIncrease = false;
+            if (CharacterSetValuesAlwaysIncrease && pc > c) 
+               CharacterSetValuesAlwaysIncrease = false;
 
             pc = c;
             i++;
          }
       }
 
+      /// <summary>
+      /// Constructs an IntegerEncoder
+      /// </summary>
+      /// <param name="base"></param>
+      /// <param name="caseSensitive"></param>
+      /// <param name="characterSet"></param>
+      /// <param name="characterSetValuesAlwaysIncrease"></param>
+      /// <param name="charToValue"></param>
+      /// <exception cref="ArgumentNullException"></exception>
       public IntegerEncoder(ushort @base, bool caseSensitive, string characterSet, bool characterSetValuesAlwaysIncrease, Dictionary<char, int> charToValue)
          : base(FormattableTypes, Format)
       {
+         Argument.IsNotNull(characterSet,nameof(characterSet));
+         Argument.IsNotNull(charToValue,nameof(charToValue));
+         
          Base = @base;
          CaseSensitive = caseSensitive;
-         CharacterSet = characterSet ?? throw new ArgumentNullException(nameof(characterSet));
+         CharacterSet = characterSet;
          CharacterSetValuesAlwaysIncrease = characterSetValuesAlwaysIncrease;
-         _charToValue = charToValue ?? throw new ArgumentNullException(nameof(charToValue));
+         _charToValue = charToValue;
       }
 
       #endregion Public Constructors
@@ -168,7 +183,7 @@ namespace Jcd.Formatting
          {
             var r = (int) (cv % Base);
             sb.Add(CharacterSet[r]);
-            cv = cv / Base;
+            cv /= Base;
          }
 
          return FormatResult(sb);
@@ -184,7 +199,7 @@ namespace Jcd.Formatting
          {
             var r = (int) (cv % Base);
             sb.Add(CharacterSet[r]);
-            cv = cv / Base;
+            cv /= Base;
          }
 
          return FormatResult(sb);
@@ -234,7 +249,7 @@ namespace Jcd.Formatting
             {
                var r = cv % Base;
                sb.Add(CharacterSet[Math.Abs(r)]);
-               cv = cv / Base;
+               cv /= Base;
             }
          }
          else
@@ -243,7 +258,7 @@ namespace Jcd.Formatting
             {
                var r = cv % Base;
                sb.Add(CharacterSet[r]);
-               cv = cv / Base;
+               cv /= Base;
             }
          }
 
@@ -264,7 +279,7 @@ namespace Jcd.Formatting
             {
                var r = (int) (cv % Base);
                sb.Add(CharacterSet[Math.Abs(r)]);
-               cv = cv / Base;
+               cv /= Base;
             }
          }
          else
@@ -273,7 +288,7 @@ namespace Jcd.Formatting
             {
                var r = (int) (cv % Base);
                sb.Add(CharacterSet[r]);
-               cv = cv / Base;
+               cv /= Base;
             }
          }
 
@@ -355,7 +370,7 @@ namespace Jcd.Formatting
             var br = cv % (int) Base;
             var r = (int) br;
             sb.Add(CharacterSet[r]);
-            cv = cv / Base;
+            cv /= Base;
          }
 
          if (value < 0) sb.Add('-');
@@ -790,7 +805,7 @@ namespace Jcd.Formatting
          return formatter.Format(fmt, value, formatProvider);
       }
 
-      private string ExtractCoreDigits(string value)
+      private static string ExtractCoreDigits(string value)
       {
          var isNeg = value[0] == '-';
          var s = isNeg ? 1 : 0;
@@ -802,6 +817,7 @@ namespace Jcd.Formatting
 
       private string FormatObject(object value)
       {
+         // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
          switch (Type.GetTypeCode(value.GetType()))
          {
             case TypeCode.Byte:
@@ -837,9 +853,7 @@ namespace Jcd.Formatting
                return Format((long) value);
          }
 
-         if (value.IsIntegerType()) return Format((BigInteger) value);
-
-         return value.ToString();
+         return value.IsIntegerType() ? Format((BigInteger) value) : value.ToString();
       }
 
       private string FormatResult(List<char> sb)

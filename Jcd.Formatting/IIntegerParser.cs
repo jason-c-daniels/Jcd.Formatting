@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Numerics;
+// ReSharper disable UnusedMemberInSuper.Global
+// ReSharper disable UnusedMember.Global
 
 namespace Jcd.Formatting
 {
@@ -23,7 +25,7 @@ namespace Jcd.Formatting
       ///     If the provided characters cannot be decoded per the current encoding..
       /// </exception>
       /// <exception cref="ArgumentNullException">
-      ///     If the text cannot be parse because the resultant value cause the application to exahaust
+      ///     If the text cannot be parse because the resultant value cause the application to exhaust
       ///     its memory.
       /// </exception>
       BigInteger ParseBigInteger(string value);

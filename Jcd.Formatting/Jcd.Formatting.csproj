@@ -32,8 +32,8 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Jcd.Reflection" Version="1.0.24" />
-        <PackageReference Include="Jcd.Validations" Version="1.0.14" />
+        <PackageReference Include="Jcd.Reflection" Version="1.0.26" />
+        <PackageReference Include="Jcd.Validations" Version="1.0.17" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using System.Numerics;
+// ReSharper disable UnusedMemberInSuper.Global
 
 namespace Jcd.Formatting
 {

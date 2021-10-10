@@ -20,7 +20,7 @@ If the text is empty or whitespace.
 [System.OutOfMemoryException](https://docs.microsoft.com/en-us/dotnet/api/System.OutOfMemoryException 'System.OutOfMemoryException')  
 If the provided characters cannot be decoded per the current encoding..  
 [System.ArgumentNullException](https://docs.microsoft.com/en-us/dotnet/api/System.ArgumentNullException 'System.ArgumentNullException')  
-If the text cannot be parse because the resultant value cause the application to exahaust  
+If the text cannot be parse because the resultant value cause the application to exhaust  
 its memory.  
 
 Implements [ParseBigInteger(string)](Jcd_Formatting_IIntegerParser_ParseBigInteger(string).md 'Jcd.Formatting.IIntegerParser.ParseBigInteger(string)')  

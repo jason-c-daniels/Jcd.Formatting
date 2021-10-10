@@ -39,6 +39,7 @@ namespace Jcd.Formatting
       /// <summary>
       ///    Default type comparison
       /// </summary>
+      // ReSharper disable once UnusedMember.Global
       protected readonly MyTypeComparer TypeComparer = new MyTypeComparer();
 
       #endregion Protected Fields
@@ -68,7 +69,7 @@ namespace Jcd.Formatting
 
       #region Private Methods
 
-      private string HandleOtherFormats(string format, object arg)
+      private static string HandleOtherFormats(string format, object arg)
       {
          if (arg is IFormattable formattable) return formattable.ToString(format, CultureInfo.CurrentCulture);
 
@@ -90,7 +91,7 @@ namespace Jcd.Formatting
          /// <summary>
          ///    Performs a comparison between two types.
          /// </summary>
-         /// <param name="x">the elft side of the comparison</param>
+         /// <param name="x">the left side of the comparison</param>
          /// <param name="y">the right ride of the comparison</param>
          /// <returns>-1 if x is less than y, 1 if x is greater than y, 0 if equal.</returns>
          public int Compare(Type x, Type y)
@@ -127,6 +128,7 @@ namespace Jcd.Formatting
 
          if (!ReferenceEquals(this, formatProvider)) return null;
 
+         // ReSharper disable once ConvertIfStatementToReturnStatement
          if (_handledTypes.Contains(arg == null ? typeof(object) : arg.GetType()))
          {
             return _formatFunction(this, fmt, arg, formatProvider);
