@@ -818,6 +818,7 @@ namespace Jcd.Formatting
       private string FormatObject(object value)
       {
          // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
+         // ReSharper disable once ConvertSwitchStatementToSwitchExpression
          switch (Type.GetTypeCode(value.GetType()))
          {
             case TypeCode.Byte:

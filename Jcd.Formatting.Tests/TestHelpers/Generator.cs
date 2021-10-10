@@ -39,6 +39,7 @@ namespace Jcd.Formatting.Tests.TestHelpers
       /// </summary>
       /// <param name="initial">The initial state.</param>
       /// <param name="transitionFunction">The state transition function.</param>
+      // ReSharper disable once MemberCanBeProtected.Global
       public CaptureAndTransitionGenerator(TState initial, StateTransitionFunction transitionFunction)
       {
          Argument.IsNotNull(transitionFunction);
@@ -58,6 +59,7 @@ namespace Jcd.Formatting.Tests.TestHelpers
       /// <summary>
       ///    The state transition function.
       /// </summary>
+      // ReSharper disable once MemberCanBePrivate.Global
       protected readonly StateTransitionFunction TransitionFunction;
 
       #endregion Protected Fields
@@ -65,7 +67,7 @@ namespace Jcd.Formatting.Tests.TestHelpers
       #region Public Methods
 
       /// <summary>
-      ///    Retrieves an enmerator that yields data from calling transitionFunction. This is
+      ///    Retrieves an enumerator that yields data from calling transitionFunction. This is
       ///    guaranteed to be called once for the initial state.
       /// </summary>
       /// <returns>The result of transitionFunction</returns>
@@ -80,7 +82,7 @@ namespace Jcd.Formatting.Tests.TestHelpers
       }
 
       /// <summary>
-      ///    Retrieves an enmerator that yields data from calling transitionFunction(state, out
+      ///    Retrieves an enumerator that yields data from calling transitionFunction(state, out
       ///    @continue). This is guaranteed to be called once for the initial state.
       /// </summary>
       /// <returns>The result of transitionFunction(state, out @continue)</returns>

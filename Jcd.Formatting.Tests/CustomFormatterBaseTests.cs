@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Jcd.Formatting;
-
 using Xunit;
 
 namespace Jcd.Formatting.Tests
@@ -22,7 +20,7 @@ namespace Jcd.Formatting.Tests
       /// <summary>
       ///    A helper class that yields a fixed result for any calls to format
       /// </summary>
-      public class FakeCustomFormatter : CustomFormatterBase
+      private class FakeCustomFormatter : CustomFormatterBase
       {
          #region Public Fields
 
@@ -35,7 +33,7 @@ namespace Jcd.Formatting.Tests
 
          #region Protected Fields
 
-         protected readonly string FormatResult;
+         private readonly string _formatResult;
 
          #endregion Protected Fields
 
@@ -49,7 +47,7 @@ namespace Jcd.Formatting.Tests
                    handledTypes,
                    formatFunction)
          {
-            FormatResult = formatResult;
+            _formatResult = formatResult;
          }
 
          #endregion Public Constructors
@@ -58,7 +56,7 @@ namespace Jcd.Formatting.Tests
 
          public static string Format(ICustomFormatter formatter, string fmt, object arg, IFormatProvider fmtProvider)
          {
-            if (formatter is FakeCustomFormatter self) return self.FormatResult;
+            if (formatter is FakeCustomFormatter self) return self._formatResult;
 
             return null;
          }
@@ -72,7 +70,7 @@ namespace Jcd.Formatting.Tests
       [Fact]
       public void Constructor_WhenGivenEmptyHandledTypes_ThrowsArgumentNullException()
       {
-         Assert.Throws<ArgumentNullException>(() => new FakeCustomFormatter(null, new Type[] { }));
+         Assert.Throws<ArgumentNullException>(() => new FakeCustomFormatter(null, Array.Empty<Type>()));
       }
 
       /// <summary>
@@ -147,7 +145,7 @@ namespace Jcd.Formatting.Tests
       {
          // setup
          var sut = CreateSut();
-         long arg = 9;
+         const long arg = 9;
 
          // act
          var result = sut.Format("", arg, sut);
@@ -165,7 +163,7 @@ namespace Jcd.Formatting.Tests
          // setup
          var sut = CreateSut();
          var otherCustomFormatter = IntegerEncoders.Decimal;
-         var arg = (long) 9;
+         const long arg = 9;
 
          // act
          // assert

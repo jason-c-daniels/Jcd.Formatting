@@ -3,6 +3,7 @@
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable CommentTypo
 // ReSharper disable UnusedType.Global
+// ReSharper disable ReplaceSubstringWithRangeIndexer
 
 namespace Jcd.Formatting
 {

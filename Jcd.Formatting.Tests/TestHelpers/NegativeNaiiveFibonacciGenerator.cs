@@ -28,6 +28,7 @@ namespace Jcd.Formatting.Tests.TestHelpers
       {
          public BigInteger N0;
          public BigInteger N1;
+         // ReSharper disable once NotAccessedField.Global
          public int Nth;
       }
    }

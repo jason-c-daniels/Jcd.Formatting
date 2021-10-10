@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Numerics;
+// ReSharper disable LoopCanBeConvertedToQuery
+// ReSharper disable UnusedMember.Global
 
 namespace Jcd.Formatting.Tests.TestHelpers
 {
@@ -30,8 +32,8 @@ namespace Jcd.Formatting.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> ByteList()
       {
-         byte two = 2;
-         byte one = 1;
+         const byte two = 2;
+         const byte one = 1;
 
          yield return new[] {(object) byte.MaxValue};
          yield return new[] {(object) byte.MinValue};
@@ -44,8 +46,8 @@ namespace Jcd.Formatting.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> DecimalList()
       {
-         decimal two = 2;
-         decimal one = 1;
+         const decimal two = 2;
+         const decimal one = 1;
 
          yield return new[] {(object) decimal.MaxValue};
          yield return new[] {(object) decimal.MinValue};
@@ -58,8 +60,8 @@ namespace Jcd.Formatting.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> DoublePrecisionFloatList()
       {
-         double two = 2;
-         double one = 1;
+         const double two = 2;
+         const double one = 1;
 
          yield return new[] {(object) double.MaxValue};
          yield return new[] {(object) double.MinValue};
@@ -72,8 +74,8 @@ namespace Jcd.Formatting.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> Int16List()
       {
-         short two = 2;
-         short one = 1;
+         const short two = 2;
+         const short one = 1;
 
          yield return new[] {(object) short.MaxValue};
          yield return new[] {(object) short.MinValue};
@@ -86,8 +88,8 @@ namespace Jcd.Formatting.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> Int32List()
       {
-         var two = 2;
-         var one = 1;
+         const int two = 2;
+         const int one = 1;
 
          yield return new[] {(object) int.MaxValue};
          yield return new[] {(object) int.MinValue};
@@ -100,8 +102,8 @@ namespace Jcd.Formatting.Tests.TestHelpers
       /// </summary>
       public static IEnumerable<object[]> Int64List()
       {
-         long two = 2;
-         long one = 1;
+         const long two = 2;
+         const long one = 1;
 
          yield return new[] {(object) long.MaxValue};
          yield return new[] {(object) long.MinValue};

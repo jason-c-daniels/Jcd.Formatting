@@ -3,6 +3,7 @@ using System.Numerics;
 using Jcd.Formatting.Tests.TestHelpers;
 using Jcd.Reflection;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Jcd.Formatting.Tests
 {
@@ -12,6 +13,13 @@ namespace Jcd.Formatting.Tests
       private const string ElevenAsBinary = "1011";
       private const string NonBinaryNegativeTestData = "nonbinary-pass to binary decoder, this should make it sad.";
 
+      private readonly ITestOutputHelper _output;
+
+      public IntegerEncoderTests(ITestOutputHelper output)
+      {
+         _output = output;
+      }
+      
       /// <summary>
       ///    Performs a round trip (encode, decode) using the CrockfordEncoder encoder on the provided sample data, as
       ///    BigIntegers. The encoded and decoded values must match in order to pass.
@@ -97,7 +105,7 @@ namespace Jcd.Formatting.Tests
          }
          catch
          {
-            Console.WriteLine($"Error on {number}");
+            _output.WriteLine($"Error on {number}");
 
             throw;
          }
@@ -372,7 +380,7 @@ namespace Jcd.Formatting.Tests
       [MemberData(nameof(NumericMemberDataProvider.NegativeFibonacciBigIntegerList),
          MemberType =
             typeof(NumericMemberDataProvider))]
-      public void Format_WhenGivenNegativebigInteger_ReturnsCorrectHexString(BigInteger data)
+      public void Format_WhenGivenNegativeBigInteger_ReturnsCorrectHexString(BigInteger data)
       {
          var abs = data * -1;
          var expected = abs.ToString("X").ToLowerInvariant().TrimLeadingZeros();
@@ -750,7 +758,7 @@ namespace Jcd.Formatting.Tests
                             "0oO"
                          };
 
-         var encodeSet = "012";
+         const string encodeSet = "012";
 
          Assert.Throws<ArgumentException>(() =>
                                           {
@@ -771,7 +779,7 @@ namespace Jcd.Formatting.Tests
                             "2"
                          };
 
-         var encodeSet = "0!2";
+         const string encodeSet = "0!2";
 
          Assert.Throws<ArgumentException>(() =>
                                           {
