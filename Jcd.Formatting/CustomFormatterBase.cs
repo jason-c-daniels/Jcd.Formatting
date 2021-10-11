@@ -25,7 +25,6 @@ namespace Jcd.Formatting
       /// <param name="argToFormat">The item to format.</param>
       /// <param name="formatProvider">The format provider.</param>
       /// <returns></returns>
-
       // ReSharper disable once UnusedMember.Global
       public delegate string CustomFormattingFunction(ICustomFormatter customFormatter,
                                                       string formatString,

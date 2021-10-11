@@ -503,7 +503,7 @@ namespace Jcd.Formatting
          if (!CaseSensitive) value = value.ToLowerInvariant();
 
          var result = (long) 0;
-         var isNeg = value[0] == '-';// ? -1 : 1;
+         var isNeg = value[0] == '-'; // ? -1 : 1;
          var digits = ExtractCoreDigits(value);
 
          foreach (var digit in digits)
