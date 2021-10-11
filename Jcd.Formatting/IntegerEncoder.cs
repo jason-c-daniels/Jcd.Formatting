@@ -74,8 +74,7 @@ namespace Jcd.Formatting
          : base(FormattableTypes, Format)
       {
          Argument.IsNotNullWhitespaceOrEmpty(encodeCharacterSet, nameof(encodeCharacterSet));
-         Argument.IsNotNull(decodeCharacterSet, nameof(decodeCharacterSet));
-         Argument.HasItems(decodeCharacterSet, nameof(decodeCharacterSet));
+         Argument.HasItems(Argument.IsNotNull(decodeCharacterSet, nameof(decodeCharacterSet)), nameof(decodeCharacterSet));
 
          Argument.AreEqual(decodeCharacterSet.Length,
                            encodeCharacterSet.Length,

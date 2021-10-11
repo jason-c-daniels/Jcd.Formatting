@@ -57,12 +57,9 @@ namespace Jcd.Formatting
       protected CustomFormatterBase(IEnumerable<Type> handledTypes,
                                     Func<ICustomFormatter, string, object, IFormatProvider, string> formatFunction)
       {
-         var handledTypesList = handledTypes?.ToList();
-         Argument.IsNotNull(handledTypesList, nameof(handledTypes));
-         Argument.IsNotNull(formatFunction, nameof(formatFunction));
-         _formatFunction = formatFunction;
          // ReSharper disable once AssignNullToNotNullAttribute
-         _handledTypes = new HashSet<Type>(handledTypesList);
+         _handledTypes = new HashSet<Type>(Argument.IsNotNull(handledTypes, nameof(handledTypes)));
+         _formatFunction = Argument.IsNotNull(formatFunction, nameof(formatFunction));
       }
 
       #endregion Protected Constructors

@@ -42,9 +42,8 @@ namespace Jcd.Formatting.Tests.TestHelpers
       // ReSharper disable once MemberCanBeProtected.Global
       public CaptureAndTransitionGenerator(TState initial, StateTransitionFunction transitionFunction)
       {
-         Argument.IsNotNull(transitionFunction);
+         TransitionFunction = Argument.IsNotNull(transitionFunction);
          CurrentState = initial;
-         TransitionFunction = transitionFunction;
       }
 
       #endregion Public Constructors
