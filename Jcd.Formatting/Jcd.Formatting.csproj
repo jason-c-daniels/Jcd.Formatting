@@ -18,6 +18,12 @@
         <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
         <PackageReleaseNotes>Upgraded Jcd.Validations to 1.0.8 and Jcd.Reflection to 1.0.12</PackageReleaseNotes>
     </PropertyGroup>
+    <PropertyGroup>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Include="..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <DocumentationFile>..\docs\Jcd.Formatting.xml</DocumentationFile>
@@ -32,8 +38,8 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Jcd.Reflection" Version="1.0.38" />
-        <PackageReference Include="Jcd.Validations" Version="1.1.6" />
+        <PackageReference Include="Jcd.Reflection" Version="1.0.39" />
+        <PackageReference Include="Jcd.Validations" Version="1.1.7" />
     </ItemGroup>
 
 </Project>

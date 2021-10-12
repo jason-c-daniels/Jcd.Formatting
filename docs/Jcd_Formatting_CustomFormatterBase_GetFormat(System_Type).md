@@ -13,4 +13,4 @@ An object that specifies the type of format object to return.
 [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object')  
 An instance of the object specified by [formatType](Jcd_Formatting_CustomFormatterBase_GetFormat(System_Type).md#Jcd_Formatting_CustomFormatterBase_GetFormat(System_Type)_formatType 'Jcd.Formatting.CustomFormatterBase.GetFormat(System.Type).formatType'), if the [System.IFormatProvider](https://docs.microsoft.com/en-us/dotnet/api/System.IFormatProvider 'System.IFormatProvider') implementation can supply that type of object; otherwise, null.
 
-Implements [GetFormat(Type?)](https://docs.microsoft.com/en-us/dotnet/api/System.IFormatProvider.GetFormat#System_IFormatProvider_GetFormat_System_Type_ 'System.IFormatProvider.GetFormat(System.Type)')  
+Implements [GetFormat(Type)](https://docs.microsoft.com/en-us/dotnet/api/System.IFormatProvider.GetFormat#System_IFormatProvider_GetFormat_System_Type_ 'System.IFormatProvider.GetFormat(System.Type)')  

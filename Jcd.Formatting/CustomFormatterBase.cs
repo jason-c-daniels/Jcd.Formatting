@@ -15,24 +15,6 @@ namespace Jcd.Formatting
    /// </summary>
    public abstract class CustomFormatterBase : IFormatProvider, ICustomFormatter
    {
-      #region Public Delegates
-
-      /// <summary>
-      ///    This is the signature which custom formatting functions must abide by.
-      /// </summary>
-      /// <param name="customFormatter">The custom formatter object.</param>
-      /// <param name="formatString">the format string.</param>
-      /// <param name="argToFormat">The item to format.</param>
-      /// <param name="formatProvider">The format provider.</param>
-      /// <returns></returns>
-      // ReSharper disable once UnusedMember.Global
-      public delegate string CustomFormattingFunction(ICustomFormatter customFormatter,
-                                                      string formatString,
-                                                      object argToFormat,
-                                                      IFormatProvider formatProvider);
-
-      #endregion Public Delegates
-
       #region Protected Fields
 
       /// <summary>
@@ -120,7 +102,7 @@ namespace Jcd.Formatting
       public virtual string Format(string fmt, object arg, IFormatProvider formatProvider)
       {
          Argument.IsNotNull(formatProvider, nameof(formatProvider));
-         Argument.IsNotNull(fmt, nameof(fmt));
+         //Argument.IsNotNull(fmt, nameof(fmt));
 
          if (!ReferenceEquals(this, formatProvider)) return null;
 

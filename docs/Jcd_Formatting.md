@@ -11,7 +11,3 @@
 | :--- | :--- |
 | [IIntegerFormatter](Jcd_Formatting_IIntegerFormatter.md 'Jcd.Formatting.IIntegerFormatter') | An interface for formatting integers as text.<br/> |
 | [IIntegerParser](Jcd_Formatting_IIntegerParser.md 'Jcd.Formatting.IIntegerParser') | An interface specification for parsing integers.<br/> |
-
-| Delegates | |
-| :--- | :--- |
-| [CustomFormatterBase.CustomFormattingFunction(ICustomFormatter, string, object, IFormatProvider)](Jcd_Formatting_CustomFormatterBase_CustomFormattingFunction(System_ICustomFormatter_string_object_System_IFormatProvider).md 'Jcd.Formatting.CustomFormatterBase.CustomFormattingFunction(System.ICustomFormatter, string, object, System.IFormatProvider)') | This is the signature which custom formatting functions must abide by.<br/> |

@@ -12,16 +12,6 @@
                provide an array of handled types, and a formatting function.
             </summary>
         </member>
-        <member name="T:Jcd.Formatting.CustomFormatterBase.CustomFormattingFunction">
-            <summary>
-               This is the signature which custom formatting functions must abide by.
-            </summary>
-            <param name="customFormatter">The custom formatter object.</param>
-            <param name="formatString">the format string.</param>
-            <param name="argToFormat">The item to format.</param>
-            <param name="formatProvider">The format provider.</param>
-            <returns></returns>
-        </member>
         <member name="F:Jcd.Formatting.CustomFormatterBase.TypeComparer">
             <summary>
                Default type comparison
