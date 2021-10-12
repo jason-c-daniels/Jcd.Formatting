@@ -134,7 +134,6 @@ namespace Jcd.Formatting.Tests
       {
          var sut = CreateSut();
          Assert.Throws<ArgumentNullException>(() => sut.Format("", new object(), null));
-         Assert.Throws<ArgumentNullException>(() => sut.Format(null, new object(), sut));
       }
 
       /// <summary>
