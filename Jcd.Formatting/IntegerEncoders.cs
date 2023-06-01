@@ -32,8 +32,7 @@ namespace Jcd.Formatting
       #endregion Public Constructors
 
       #region Public Fields
-
-
+      
       /// <summary>
       ///     Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "0"
       /// </summary>
