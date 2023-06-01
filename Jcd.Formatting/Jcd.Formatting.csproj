@@ -13,10 +13,10 @@
         <PackageTags>csharp c# formatting integer encoding</PackageTags>
         <AssemblyVersion>1.0.1</AssemblyVersion>
         <FileVersion>1.0.1</FileVersion>
-        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
         <PackageVersion>1.0.1</PackageVersion>
         <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
         <PackageReleaseNotes>Upgraded Jcd.Validations to 1.0.8 and Jcd.Reflection to 1.0.12</PackageReleaseNotes>
+        <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
     <PropertyGroup>
       <PackageReadmeFile>README.md</PackageReadmeFile>

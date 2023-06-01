@@ -9,7 +9,6 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 
 | Fields | |
 | :--- | :--- |
-| [Ascii85](Jcd_Formatting_IntegerEncoders_Ascii85.md 'Jcd.Formatting.IntegerEncoders.Ascii85') | ASCII 85 formatter, possibly under patent protection, need to check.<br/> |
 | [Base1280MonotonicIso885915](Jcd_Formatting_IntegerEncoders_Base1280MonotonicIso885915.md 'Jcd.Formatting.IntegerEncoders.Base1280MonotonicIso885915') | Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "0"<br/> |
 | [Base128AMonotonicIso885915](Jcd_Formatting_IntegerEncoders_Base128AMonotonicIso885915.md 'Jcd.Formatting.IntegerEncoders.Base128AMonotonicIso885915') | Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "A"<br/> |
 | [Base128MonotonicIso885915](Jcd_Formatting_IntegerEncoders_Base128MonotonicIso885915.md 'Jcd.Formatting.IntegerEncoders.Base128MonotonicIso885915') | Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet.<br/> |
