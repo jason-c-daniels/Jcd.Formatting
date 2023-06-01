@@ -1,6 +1,5 @@
 ### [Jcd.Formatting](Jcd_Formatting.md 'Jcd.Formatting')
 ## CustomFormatterBase Class
-Provides a mechanism for retrieving an object to control formatting.
 ```csharp
 public abstract class CustomFormatterBase :
 System.IFormatProvider,
@@ -21,8 +20,3 @@ Implements [System.IFormatProvider](https://docs.microsoft.com/en-us/dotnet/api/
 | Fields | |
 | :--- | :--- |
 | [TypeComparer](Jcd_Formatting_CustomFormatterBase_TypeComparer.md 'Jcd.Formatting.CustomFormatterBase.TypeComparer') | Default type comparison<br/> |
-
-| Methods | |
-| :--- | :--- |
-| [Format(string, object, IFormatProvider)](Jcd_Formatting_CustomFormatterBase_Format(string_object_System_IFormatProvider).md 'Jcd.Formatting.CustomFormatterBase.Format(string, object, System.IFormatProvider)') | Converts the value of a specified object to an equivalent string representation using specified format and culture-specific formatting information. |
-| [GetFormat(Type)](Jcd_Formatting_CustomFormatterBase_GetFormat(System_Type).md 'Jcd.Formatting.CustomFormatterBase.GetFormat(System.Type)') | Returns an object that provides formatting services for the specified type. |
