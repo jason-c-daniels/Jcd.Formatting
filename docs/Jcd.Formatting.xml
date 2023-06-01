@@ -504,11 +504,6 @@
                 A class with a set of predefined integer encoders.
             </summary>
         </member>
-        <member name="F:Jcd.Formatting.IntegerEncoders.Ascii85">
-            <summary>
-                ASCII 85 formatter, possibly under patent protection, need to check.
-            </summary>
-        </member>
         <member name="F:Jcd.Formatting.IntegerEncoders.Base1280MonotonicIso885915">
             <summary>
                 Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "0"

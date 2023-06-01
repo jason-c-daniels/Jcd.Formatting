@@ -32,14 +32,7 @@ namespace Jcd.Formatting
       #endregion Public Constructors
 
       #region Public Fields
-
-      /// <summary>
-      ///     ASCII 85 formatter, possibly under patent protection, need to check.
-      /// </summary>
-      public static readonly IntegerEncoder Ascii85 = new
-         IntegerEncoder("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-:+=^!/*?&<>()[]{}@%$#",
-                        true);
-
+      
       /// <summary>
       ///     Base 128 formatting, first 128 characters from the ISO8859_15_EncodingCharacters alphabet, starting at "0"
       /// </summary>

@@ -1,6 +1,5 @@
 ### [Jcd.Formatting](Jcd_Formatting.md 'Jcd.Formatting').[CustomFormatterBase](Jcd_Formatting_CustomFormatterBase.md 'Jcd.Formatting.CustomFormatterBase')
 ## CustomFormatterBase.MyTypeComparer Class
-Defines a method that a type implements to compare two objects.
 ```csharp
 protected class CustomFormatterBase.MyTypeComparer :
 System.Collections.Generic.IComparer<System.Type>
