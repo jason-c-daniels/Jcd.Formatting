@@ -2,7 +2,7 @@
 ## IntegerEncoder.TryParseUInt64(string, ulong) Method
 Tries to parse a UInt64 from the provided text.  
 ```csharp
-public bool TryParseUInt64(string value, ref ulong result);
+public bool TryParseUInt64(string value, out ulong result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IntegerEncoder_TryParseUInt64(string_ulong)_value'></a>

@@ -169,8 +169,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenBigInteger_ReturnsCorrectHexString(BigInteger data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
 
          // for some odd reason BigInteger zero pads its hex representation. Ensure we've stripped the leading zeros from both. We're looking for hex encoding equivalence, not string equivalence.
          Assert.Equal(expected.TrimLeadingZeros(), actual.TrimLeadingZeros());
@@ -186,8 +186,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenUInt64_ReturnsCorrectHexString(ulong data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.Equal(expected, actual);
          Assert.Equal(data, IntegerEncoders.Hexadecimal.ParseUInt64(actual));
       }
@@ -201,8 +201,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenInt64_ReturnsCorrectHexString(long data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.Equal(expected, actual);
          Assert.Equal(data, IntegerEncoders.Hexadecimal.ParseInt64(actual));
       }
@@ -216,8 +216,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenUInt32_ReturnsCorrectHexString(uint data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.Equal(expected, actual);
          Assert.Equal(data, IntegerEncoders.Hexadecimal.ParseUInt32(actual));
       }
@@ -231,8 +231,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenInt32_ReturnsCorrectHexString(int data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.Equal(expected, actual);
          Assert.Equal(data, IntegerEncoders.Hexadecimal.ParseInt32(actual));
       }
@@ -246,8 +246,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenUInt16_ReturnsCorrectHexString(ushort data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.Equal(expected, actual);
          Assert.Equal(data, IntegerEncoders.Hexadecimal.ParseUInt16(actual));
       }
@@ -261,8 +261,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenInt16_ReturnsCorrectHexString(short data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.Equal(expected, actual);
          Assert.Equal(data, IntegerEncoders.Hexadecimal.ParseInt16(actual));
       }
@@ -276,8 +276,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenByte_ReturnsCorrectHexString(byte data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.Equal(expected, actual);
          Assert.Equal(data, IntegerEncoders.Hexadecimal.ParseByte(actual));
       }
@@ -291,8 +291,8 @@ namespace Jcd.Formatting.Tests
             typeof(NumericMemberDataProvider))]
       public void Format_WhenGivenSByte_ReturnsCorrectHexString(sbyte data)
       {
-         var expected = data.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = data.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.Equal(expected, actual);
          Assert.Equal(data, IntegerEncoders.Hexadecimal.ParseSByte(actual));
       }
@@ -307,8 +307,8 @@ namespace Jcd.Formatting.Tests
       public void Format_WhenGivenNegativeSByte_ReturnsCorrectHexString(sbyte data)
       {
          var abs = (byte) Math.Abs((short) data);
-         var expected = abs.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = abs.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.EndsWith(expected, actual);
 
          if (data < 0) Assert.StartsWith("-", actual);
@@ -326,8 +326,8 @@ namespace Jcd.Formatting.Tests
       public void Format_WhenGivenNegativeInt16_ReturnsCorrectHexString(short data)
       {
          var abs = (ushort) Math.Abs((int) data);
-         var expected = abs.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = abs.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.EndsWith(expected, actual);
 
          if (data < 0) Assert.StartsWith("-", actual);
@@ -345,8 +345,8 @@ namespace Jcd.Formatting.Tests
       public void Format_WhenGivenNegativeInt32_ReturnsCorrectHexString(int data)
       {
          var abs = (uint) Math.Abs((long) data);
-         var expected = abs.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = abs.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.EndsWith(expected, actual);
 
          if (data < 0) Assert.StartsWith("-", actual);
@@ -364,8 +364,8 @@ namespace Jcd.Formatting.Tests
       public void Format_WhenGivenNegativeInt64_ReturnsCorrectHexString(long data)
       {
          var abs = (ulong) ((BigInteger) data * -1);
-         var expected = abs.ToString("X").ToLowerInvariant();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = abs.ToString("X").ToUpperInvariant();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
          Assert.EndsWith(expected, actual);
 
          if (data < 0) Assert.StartsWith("-", actual);
@@ -383,8 +383,8 @@ namespace Jcd.Formatting.Tests
       public void Format_WhenGivenNegativeBigInteger_ReturnsCorrectHexString(BigInteger data)
       {
          var abs = data * -1;
-         var expected = abs.ToString("X").ToLowerInvariant().TrimLeadingZeros();
-         var actual = IntegerEncoders.Hexadecimal.Format(data).ToLowerInvariant();
+         var expected = abs.ToString("X").ToUpperInvariant().TrimLeadingZeros();
+         var actual = IntegerEncoders.Hexadecimal.Format(data).ToUpperInvariant();
 
          if (data < 0) Assert.StartsWith("-", actual);
 
@@ -400,9 +400,8 @@ namespace Jcd.Formatting.Tests
       [InlineData(NonBinaryNegativeTestData, false)]
       public void TryParseBigInteger_WhenGivenText_ReturnsTrueWhenDecodedFalseWhenNot(string text, bool parsed)
       {
-         BigInteger result = 0;
-         BigInteger expectedParsedResult = 11; // BigInteger can't be const. Have to use this hack.
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseBigInteger(text, ref result));
+          BigInteger expectedParsedResult = 11; // BigInteger can't be const. Have to use this hack.
+         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseBigInteger(text, out var result));
 
          if (parsed) Assert.Equal(expectedParsedResult, result);
       }
@@ -417,8 +416,7 @@ namespace Jcd.Formatting.Tests
                                                                                   bool parsed,
                                                                                   ulong decoded)
       {
-         ulong result = 0;
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseUInt64(text, ref result));
+          Assert.Equal(parsed, IntegerEncoders.Binary.TryParseUInt64(text, out var result));
 
          if (parsed) Assert.Equal(decoded, result);
       }
@@ -433,8 +431,7 @@ namespace Jcd.Formatting.Tests
                                                                                  bool parsed,
                                                                                  long decoded)
       {
-         long result = 0;
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseInt64(text, ref result));
+          Assert.Equal(parsed, IntegerEncoders.Binary.TryParseInt64(text, out var result));
 
          if (parsed) Assert.Equal(decoded, result);
       }
@@ -449,8 +446,7 @@ namespace Jcd.Formatting.Tests
                                                                                   bool parsed,
                                                                                   uint decoded)
       {
-         uint result = 0;
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseUInt32(text, ref result));
+          Assert.Equal(parsed, IntegerEncoders.Binary.TryParseUInt32(text, out var result));
 
          if (parsed) Assert.Equal(decoded, result);
       }
@@ -465,8 +461,7 @@ namespace Jcd.Formatting.Tests
                                                                                  bool parsed,
                                                                                  int decoded)
       {
-         var result = 0;
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseInt32(text, ref result));
+          Assert.Equal(parsed, IntegerEncoders.Binary.TryParseInt32(text, out var result));
 
          if (parsed) Assert.Equal(decoded, result);
       }
@@ -481,8 +476,7 @@ namespace Jcd.Formatting.Tests
                                                                                   bool parsed,
                                                                                   ushort decoded)
       {
-         ushort result = 0;
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseUInt16(text, ref result));
+          Assert.Equal(parsed, IntegerEncoders.Binary.TryParseUInt16(text, out var result));
 
          if (parsed) Assert.Equal(decoded, result);
       }
@@ -497,8 +491,7 @@ namespace Jcd.Formatting.Tests
                                                                                  bool parsed,
                                                                                  short decoded)
       {
-         short result = 0;
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseInt16(text, ref result));
+          Assert.Equal(parsed, IntegerEncoders.Binary.TryParseInt16(text, out var result));
 
          if (parsed) Assert.Equal(decoded, result);
       }
@@ -513,8 +506,7 @@ namespace Jcd.Formatting.Tests
                                                                                 bool parsed,
                                                                                 byte decoded)
       {
-         byte result = 0;
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseByte(text, ref result));
+          Assert.Equal(parsed, IntegerEncoders.Binary.TryParseByte(text, out var result));
 
          if (parsed) Assert.Equal(decoded, result);
       }
@@ -529,8 +521,7 @@ namespace Jcd.Formatting.Tests
                                                                                  bool parsed,
                                                                                  sbyte decoded)
       {
-         sbyte result = 0;
-         Assert.Equal(parsed, IntegerEncoders.Binary.TryParseSByte(text, ref result));
+          Assert.Equal(parsed, IntegerEncoders.Binary.TryParseSByte(text, out var result));
 
          if (parsed) Assert.Equal(decoded, result);
       }

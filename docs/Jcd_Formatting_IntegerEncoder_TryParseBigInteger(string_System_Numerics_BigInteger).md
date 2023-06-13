@@ -2,7 +2,7 @@
 ## IntegerEncoder.TryParseBigInteger(string, BigInteger) Method
 Tries to parse a BigInteger from the provided text.  
 ```csharp
-public bool TryParseBigInteger(string value, ref System.Numerics.BigInteger result);
+public bool TryParseBigInteger(string value, out System.Numerics.BigInteger result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IntegerEncoder_TryParseBigInteger(string_System_Numerics_BigInteger)_value'></a>

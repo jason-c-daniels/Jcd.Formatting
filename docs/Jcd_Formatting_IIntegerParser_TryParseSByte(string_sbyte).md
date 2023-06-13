@@ -2,7 +2,7 @@
 ## IIntegerParser.TryParseSByte(string, sbyte) Method
 Tries to parse a SByte from the provided text.  
 ```csharp
-bool TryParseSByte(string value, ref sbyte result);
+bool TryParseSByte(string value, out sbyte result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IIntegerParser_TryParseSByte(string_sbyte)_value'></a>

@@ -172,7 +172,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseBigInteger(string value, ref BigInteger result);
+      bool TryParseBigInteger(string value, out BigInteger result);
 
       /// <summary>
       ///    Tries to parse a Byte from the provided text.
@@ -180,7 +180,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseByte(string value, ref byte result);
+      bool TryParseByte(string value, out byte result);
 
       /// <summary>
       ///    Tries to parse a Int16 from the provided text.
@@ -188,7 +188,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseInt16(string value, ref short result);
+      bool TryParseInt16(string value, out short result);
 
       /// <summary>
       ///    Tries to parse a Int32 from the provided text.
@@ -196,7 +196,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseInt32(string value, ref int result);
+      bool TryParseInt32(string value, out int result);
 
       /// <summary>
       ///    Tries to parse a Int64 from the provided text.
@@ -204,7 +204,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseInt64(string value, ref long result);
+      bool TryParseInt64(string value, out long result);
 
       /// <summary>
       ///    Tries to parse a SByte from the provided text.
@@ -212,7 +212,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseSByte(string value, ref sbyte result);
+      bool TryParseSByte(string value, out sbyte result);
 
       /// <summary>
       ///    Tries to parse a UInt16 from the provided text.
@@ -220,7 +220,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseUInt16(string value, ref ushort result);
+      bool TryParseUInt16(string value, out ushort result);
 
       /// <summary>
       ///    Tries to parse a UInt32 from the provided text.
@@ -228,7 +228,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseUInt32(string value, ref uint result);
+      bool TryParseUInt32(string value, out uint result);
 
       /// <summary>
       ///    Tries to parse a UInt64 from the provided text.
@@ -236,7 +236,7 @@ namespace Jcd.Formatting
       /// <param name="value">the text to parse</param>
       /// <param name="result">the resultant value</param>
       /// <returns>true if successfully parsed, false otherwise</returns>
-      bool TryParseUInt64(string value, ref ulong result);
+      bool TryParseUInt64(string value, out ulong result);
 
       #endregion Public Methods
    }

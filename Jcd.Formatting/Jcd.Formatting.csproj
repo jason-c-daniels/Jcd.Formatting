@@ -4,18 +4,18 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Jcd.Formatting</Title>
         <Authors>Jason C Daniels</Authors>
-        <Description>A library to simplify implementing IFormatProvider and ICustomFormatter as well as arbitrary integer encoding (e.g. Base 31 is you please)</Description>
-        <Copyright>2018-2021</Copyright>
+        <Description>A library to simplify implementing IFormatProvider and ICustomFormatter as well as arbitrary integer encoding (e.g. Base 36)</Description>
+        <Copyright>2018-2023</Copyright>
         <PackageProjectUrl>https://github.com/jason-c-daniels/Jcd.Formatting</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/jason-c-daniels/Jcd.Formatting/blob/main/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/jason-c-daniels/Jcd.Formatting</RepositoryUrl>
         <RepositoryType>GitHub</RepositoryType>
         <PackageTags>csharp c# formatting integer encoding</PackageTags>
-        <AssemblyVersion>1.0.1</AssemblyVersion>
-        <FileVersion>1.0.1</FileVersion>
-        <PackageVersion>1.0.1</PackageVersion>
+        <AssemblyVersion>2.0.1</AssemblyVersion>
+        <FileVersion>2.0.1</FileVersion>
+        <PackageVersion>2.0.1</PackageVersion>
         <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
-        <PackageReleaseNotes>Upgraded Jcd.Validations to 1.0.8 and Jcd.Reflection to 1.0.12</PackageReleaseNotes>
+        <PackageReleaseNotes>Changed from ref to out on IIntegerParser</PackageReleaseNotes>
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
     <PropertyGroup>
