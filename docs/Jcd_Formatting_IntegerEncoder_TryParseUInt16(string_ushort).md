@@ -2,7 +2,7 @@
 ## IntegerEncoder.TryParseUInt16(string, ushort) Method
 Tries to parse a UInt16 from the provided text.  
 ```csharp
-public bool TryParseUInt16(string value, ref ushort result);
+public bool TryParseUInt16(string value, out ushort result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IntegerEncoder_TryParseUInt16(string_ushort)_value'></a>

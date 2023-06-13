@@ -2,7 +2,7 @@
 ## IntegerEncoder.TryParseUInt32(string, uint) Method
 Tries to parse a UInt32 from the provided text.  
 ```csharp
-public bool TryParseUInt32(string value, ref uint result);
+public bool TryParseUInt32(string value, out uint result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IntegerEncoder_TryParseUInt32(string_uint)_value'></a>

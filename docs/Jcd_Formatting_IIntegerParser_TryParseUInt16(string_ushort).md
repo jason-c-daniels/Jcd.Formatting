@@ -2,7 +2,7 @@
 ## IIntegerParser.TryParseUInt16(string, ushort) Method
 Tries to parse a UInt16 from the provided text.  
 ```csharp
-bool TryParseUInt16(string value, ref ushort result);
+bool TryParseUInt16(string value, out ushort result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IIntegerParser_TryParseUInt16(string_ushort)_value'></a>

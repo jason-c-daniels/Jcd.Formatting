@@ -2,7 +2,7 @@
 ## IntegerEncoder.TryParseByte(string, byte) Method
 Tries to parse a Byte from the provided text.  
 ```csharp
-public bool TryParseByte(string value, ref byte result);
+public bool TryParseByte(string value, out byte result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IntegerEncoder_TryParseByte(string_byte)_value'></a>

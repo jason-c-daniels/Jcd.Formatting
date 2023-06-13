@@ -2,7 +2,7 @@
 ## IIntegerParser.TryParseInt64(string, long) Method
 Tries to parse a Int64 from the provided text.  
 ```csharp
-bool TryParseInt64(string value, ref long result);
+bool TryParseInt64(string value, out long result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IIntegerParser_TryParseInt64(string_long)_value'></a>

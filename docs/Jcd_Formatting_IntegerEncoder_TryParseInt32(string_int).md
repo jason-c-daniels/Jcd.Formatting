@@ -2,7 +2,7 @@
 ## IntegerEncoder.TryParseInt32(string, int) Method
 Tries to parse a Int32 from the provided text.  
 ```csharp
-public bool TryParseInt32(string value, ref int result);
+public bool TryParseInt32(string value, out int result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IntegerEncoder_TryParseInt32(string_int)_value'></a>

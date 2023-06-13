@@ -2,7 +2,7 @@
 ## IIntegerParser.TryParseByte(string, byte) Method
 Tries to parse a Byte from the provided text.  
 ```csharp
-bool TryParseByte(string value, ref byte result);
+bool TryParseByte(string value, out byte result);
 ```
 #### Parameters
 <a name='Jcd_Formatting_IIntegerParser_TryParseByte(string_byte)_value'></a>
