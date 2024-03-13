@@ -3,7 +3,7 @@ A library to simplify implementing IFormatProvider and ICustomFormatter as well 
 
 ## Change Log
 
-### 2.0 
+### 2.0
 - IIntegerParser.`TryParseXYZ` methods now use an `out` instead of taking a `ref`.
 - IntegerEncoder - Case insensitive alphabets now emit uppercase letters when calling format.
 
