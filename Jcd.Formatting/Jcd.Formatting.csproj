@@ -1,22 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
 
     <PropertyGroup>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Jcd.Formatting</Title>
         <Authors>Jason C Daniels</Authors>
         <Description>A library to simplify implementing IFormatProvider and ICustomFormatter as well as arbitrary integer encoding (e.g. Base 36)</Description>
-        <Copyright>2018-2023</Copyright>
+        <Copyright>2018-2024</Copyright>
         <PackageProjectUrl>https://github.com/jason-c-daniels/Jcd.Formatting</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/jason-c-daniels/Jcd.Formatting/blob/main/LICENSE</PackageLicenseUrl>
         <RepositoryUrl>https://github.com/jason-c-daniels/Jcd.Formatting</RepositoryUrl>
         <RepositoryType>GitHub</RepositoryType>
         <PackageTags>csharp c# formatting integer encoding</PackageTags>
-        <AssemblyVersion>2.0.1</AssemblyVersion>
-        <FileVersion>2.0.1</FileVersion>
-        <PackageVersion>2.0.1</PackageVersion>
-        <PackageIconUrl>https://s.gravatar.com/avatar/c7e8df18f543ea857ac93660a190df98?s=320</PackageIconUrl>
-        <PackageReleaseNotes>Changed from ref to out on IIntegerParser</PackageReleaseNotes>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyVersion>2.0.5</AssemblyVersion>
+        <FileVersion>2.0.5</FileVersion>
+        <PackageVersion>2.0.5</PackageVersion>
+        <PackageIcon>Jason.C.Daniels.jpg</PackageIcon>
+        <PackageReleaseNotes>Updated tooling and dependencies.</PackageReleaseNotes>
     </PropertyGroup>
     <PropertyGroup>
       <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -34,12 +38,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="DefaultDocumentation" Version="0.7.9">
+        <PackageReference Include="DefaultDocumentation" Version="0.8.2">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Jcd.Reflection" Version="1.0.39" />
-        <PackageReference Include="Jcd.Validations" Version="1.1.7" />
+        <PackageReference Include="Jcd.Reflection" Version="2.0.0" />
+        <PackageReference Include="Jcd.Validations" Version="1.2.0" />
     </ItemGroup>
-
+   
+   <ItemGroup>
+      <None Remove="icon\Jason.C.Daniels.jpg"/>
+      <Content Include="icon\Jason.C.Daniels.jpg" Pack="true" PackagePath="\">
+         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+   </ItemGroup>
+   
 </Project>
